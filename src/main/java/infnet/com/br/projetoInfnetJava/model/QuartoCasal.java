@@ -12,7 +12,6 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
 public class QuartoCasal{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
