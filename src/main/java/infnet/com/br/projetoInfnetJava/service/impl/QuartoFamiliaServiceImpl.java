@@ -4,10 +4,12 @@ import infnet.com.br.projetoInfnetJava.model.QuartoFamilia;
 import infnet.com.br.projetoInfnetJava.repository.QuartoFamiliaRepository;
 import infnet.com.br.projetoInfnetJava.service.QuartoFamiliaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class QuartoFamiliaServiceImpl implements QuartoFamiliaService {
     @Autowired
     QuartoFamiliaRepository QuartoFamiliaRepository;

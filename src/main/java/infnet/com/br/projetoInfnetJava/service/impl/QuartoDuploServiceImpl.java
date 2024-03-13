@@ -4,10 +4,12 @@ import infnet.com.br.projetoInfnetJava.model.QuartoDuplo;
 import infnet.com.br.projetoInfnetJava.repository.QuartoDuploRepository;
 import infnet.com.br.projetoInfnetJava.service.QuartoDuploService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class QuartoDuploServiceImpl implements QuartoDuploService {
     @Autowired
     QuartoDuploRepository quartoDuploRepository;

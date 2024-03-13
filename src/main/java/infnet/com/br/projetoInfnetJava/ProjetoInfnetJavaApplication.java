@@ -7,9 +7,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@ComponentScan({"infnet.com.br.projetoInfnetJava.service"})
-@EntityScan("infnet.com.br.projetoInfnetJava.model")
-@EnableJpaRepositories("infnet.com.br.projetoInfnetJava.repository")
 public class ProjetoInfnetJavaApplication {
 
 	public static void main(String[] args) {

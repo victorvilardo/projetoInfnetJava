@@ -14,19 +14,35 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
-@Controller
-@RequestMapping("/quartosingle")
-
+@RestController
+@RequestMapping("/quartoSingle")
 public class QuartoSingleController {
     @Autowired
     QuartoSingleService quartoSingleService;
 
-    @GetMapping(path = "/find")
-    public ResponseEntity<Optional<QuartoSingle>> findById(@RequestParam long id) {
-        return ResponseEntity.ok(quartoSingleService.findById(id));
+    @GetMapping(path = "find/{id}")
+    public ResponseEntity<QuartoSingle> findById(@RequestParam long id) {
+        Optional<QuartoSingle> quartoOptional = quartoSingleService.findById(id);
+
+        if (quartoOptional.isPresent()) {
+            return ResponseEntity.ok(quartoOptional.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+    @GetMapping(path = "/findAll")
+    public ResponseEntity<List<QuartoSingle>> findAll() {
+        List<QuartoSingle> quartos = quartoSingleService.findAll();
+
+        if (!quartos.isEmpty()) {
+            return ResponseEntity.ok(quartos);
+        } else {
+            return ResponseEntity.noContent().build();
+        }
     }
 
     @PostMapping("/add")
