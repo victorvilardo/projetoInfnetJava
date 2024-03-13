@@ -7,7 +7,7 @@ import java.io.Serial;
 @Entity
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class QuartoCasal extends Quarto{
+public class QuartoDuplo extends Quarto{
 
     @Serial
     private static final long serialVersionUID = 1L;
